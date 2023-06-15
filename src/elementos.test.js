@@ -1,4 +1,4 @@
-import { GetByText } from '@testing-library/dom'
+import { getByText } from '@testing-library/dom'
 import '@testing-library/jest-dom/extend-expect'
 import {JSDOM} from 'jsdom'
 import fs from 'fs'
@@ -20,5 +20,7 @@ describe('testando o index.html', ()=>{
     it('checando se eu tenho um titulo h1',()=>{
         let h1Element = container.querySelector('h1')
         expect(h1Element).not.toBeNull()
+        let textH1 = getByText(container,"Testando Apps")
+        expect(textH1).toBeInTheDocument()
     })
 })
